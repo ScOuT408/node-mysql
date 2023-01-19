@@ -13,13 +13,7 @@ const app = express();
 dotenv.config();
 
 //middlewares
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Credentials", true);
-  next();
-});
-app.use(cors({
-  origin: "https://mysql-crud.vercel.app/"
-}));
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
