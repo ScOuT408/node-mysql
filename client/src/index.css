@@ -104,6 +104,68 @@ small {
   text-align: center;
 }
 
+/* home css  */
+.container {
+  width: 85%;
+  margin: 6rem auto 0 auto;
+}
+
+.container .grid_box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  place-content: center;
+  gap: 1rem;
+}
+
+.container .grid_box .box {
+  width: 100%;
+  background-color: #f4f4f4;
+  box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+  border: 0.1rem solid #dfdfdf;
+  padding: 0.7rem;
+}
+
+.container .grid_box .box img {
+  width: 100%;
+  height: 28rem;
+  object-fit: cover;
+}
+
+.container .grid_box .box .book_info h3 {
+  font-size: 1.9rem;
+  text-transform: capitalize;
+  margin: 0.7rem 0;
+  color: #222;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.container .grid_box .box .book_info p {
+  font-size: 1.4rem;
+  color: #222;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  line-height: 1.4;
+}
+
+.container .grid_box .box .book_info h4 {
+  font-size: 1.4rem;
+  color: #444;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-align: right !important;
+}
+
+.container .grid_box .box button {
+  padding: 1rem 2rem;
+  background: orange;
+  color: #fff;
+  font-size: 1.4rem;
+  border: none;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
 /* media quries  */
 
 @media screen and (max-width: 800px) {
@@ -112,7 +174,7 @@ small {
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 850px) {
   .header {
     width: 95%;
   }

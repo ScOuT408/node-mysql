@@ -136,7 +136,10 @@ export const updateBook = (req, res) => {
   const { name, book_desc, author } = req.body;
 
   const file = req.file;
-  const fileUri = getDataUri(file);
+
+  let fileUri;
+
+  if (file) fileUri = getDataUri(file);
 
   connection.query(`SELECT * FROM books WHERE id = ${id}`, (err, data) => {
     if (err) {
@@ -145,6 +148,8 @@ export const updateBook = (req, res) => {
         message: "Internal server error",
       });
     }
+
+    if (!file) return;
 
     const public_id = data[0].public_id;
 
@@ -170,7 +175,6 @@ export const updateBook = (req, res) => {
       );
     });
   });
-
   connection.query(
     `UPDATE books SET name = '${name}', book_desc = '${book_desc}', author = '${author}' WHERE id = ${id}`,
     (err, data) => {
