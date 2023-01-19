@@ -28,14 +28,6 @@ cloudinary.v2.config({
   api_secret: process.env.CLOUDINARY_CLIENT_SECRET,
 });
 
-//database connection
-connection.connect((err) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log("Database connected");
-  }
-});
 
 //test route
 app.get("/", (req, res) => {
